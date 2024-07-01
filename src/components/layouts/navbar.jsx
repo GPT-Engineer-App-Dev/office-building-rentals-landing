@@ -1,15 +1,5 @@
-import { CircleUser, Menu, Package2, Search } from "lucide-react"
-
-import { Button } from "@/components/ui/button"
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
-import { Checkbox } from "@/components/ui/checkbox"
+import { CircleUser, Menu, Package2, Search } from "lucide-react";
+import { Button } from "@/components/ui/button";
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -17,9 +7,8 @@ import {
   DropdownMenuLabel,
   DropdownMenuSeparator,
   DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu"
-import { Input } from "@/components/ui/input"
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet"
+} from "@/components/ui/dropdown-menu";
+import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Outlet } from "react-router-dom";
 
 function SharedLayout() {
@@ -32,13 +21,31 @@ function SharedLayout() {
             className="flex items-center gap-2 text-lg font-semibold md:text-base"
           >
             <Package2 className="h-6 w-6" />
-            <span className="sr-only">Acme Inc</span>
+            <span className="sr-only">Office Rentals</span>
           </a>
           <a
             href="#"
             className="text-muted-foreground transition-colors hover:text-foreground"
           >
             Home
+          </a>
+          <a
+            href="#"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            About Us
+          </a>
+          <a
+            href="#"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Properties
+          </a>
+          <a
+            href="#"
+            className="text-muted-foreground transition-colors hover:text-foreground"
+          >
+            Contact
           </a>
         </nav>
         <Sheet>
@@ -59,7 +66,7 @@ function SharedLayout() {
                 className="flex items-center gap-2 text-lg font-semibold"
               >
                 <Package2 className="h-6 w-6" />
-                <span className="sr-only">Acme Inc</span>
+                <span className="sr-only">Office Rentals</span>
               </a>
               <a
                 href="#"
@@ -67,33 +74,38 @@ function SharedLayout() {
               >
                 Home
               </a>
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                About Us
+              </a>
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                Properties
+              </a>
+              <a
+                href="#"
+                className="text-muted-foreground hover:text-foreground"
+              >
+                Contact
+              </a>
             </nav>
           </SheetContent>
         </Sheet>
         <div className="flex items-center gap-4 md:gap-2 lg:gap-4">
-          <DropdownMenu>
-            <DropdownMenuTrigger asChild>
-              <Button variant="secondary" size="icon" className="rounded-full">
-                <CircleUser className="h-5 w-5" />
-                <span className="sr-only">Toggle user menu</span>
-              </Button>
-            </DropdownMenuTrigger>
-            <DropdownMenuContent align="end">
-              <DropdownMenuLabel>My Account</DropdownMenuLabel>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Settings</DropdownMenuItem>
-              <DropdownMenuItem>Support</DropdownMenuItem>
-              <DropdownMenuSeparator />
-              <DropdownMenuItem>Logout</DropdownMenuItem>
-            </DropdownMenuContent>
-          </DropdownMenu>
+          <Button variant="secondary" size="sm">
+            Login
+          </Button>
         </div>
       </header>
-      <main className="flex flex-1">
+      <main className="flex flex-1 flex-col items-center justify-center">
         <Outlet />
       </main>
     </div>
-  )
+  );
 }
 
 export default SharedLayout;
